@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nie tędy droga</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <style>
+
+        @font-face {
+            font-family:"error-code";
+            src:url("fonts/modern.ttf");
+        }
+
+        body {
+            margin:0;
+            padding:0;
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction:column;
+            background-color:#fff;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .error-code {
+            font-size:10em;
+            font-family:"error-code";
+            color:rgb(199, 199, 199);
+        }
+
+        .info-wrapper {
+            text-align:center;
+            position:relative;
+            bottom:30px;
+        }
+
+        .info-wrapper__text {
+            font-size:17px;
+            padding:0px 10px;
+        }
+
+        .info-wrapper__return {
+            width:90px;
+            height:32px;
+            border:1px solid #000;
+            padding:8px;
+            transition:transform .2s;
+            font-size:14px;
+        }
+
+        .info-wrapper__return:active {
+            transform:scale(.9);
+
+        }
+
+        @media (min-width:450px) {
+            .error-code {
+                font-size:15em;
+            }
+        }
+
+        @media (min-width:600px) {
+            .error-code {
+                font-size:20em;
+            }
+            .info-wrapper {
+                bottom:60px;
+            }
+        }
+
+        @media (min-width:1000px) {
+            .error-code {
+                font-size:26em;
+            }
+            .info-wrapper__return {
+                width:120px;
+                height:40px;
+                font-size:16px;
+                margin-top:5px;
+            }
+        }
+
+
+        @media (min-width:1400px) {
+            .error-code {
+                font-size:31em;
+            }
+            .info-wrapper {
+                bottom:80px;
+            }
+            .info-wrapper__text {
+                font-size:22px;
+            }
+            .info-wrapper__return {
+                width:150px;
+                height:45px;
+                font-size:20px;
+            }
+        }
+
+        @media (min-width:1700px) {
+            .error-code {
+                font-size:40em;
+            }
+            .info-wrapper {
+                bottom:110px;
+            }
+            .info-wrapper__text {
+                font-size:26px;
+            }
+            .info-wrapper__return {
+                width:180px;
+                height:55px;
+                font-size:21px;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="error-code">404</div>
+    <div class="info-wrapper">
+        <p class="info-wrapper__text">Żądana strona nie istnieje pod tym linkim lub została usunięta</p>
+        <button class="info-wrapper__return">Powrót</button>
+    </div>
+</body>
+</html>
