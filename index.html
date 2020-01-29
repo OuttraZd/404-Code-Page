@@ -29,7 +29,7 @@
         .error-code {
             font-size:10em;
             font-family:"error-code";
-            color:rgba(224, 222, 222, 0.788);
+            color:rgb(224, 222, 222);
         }
 
         .info-wrapper {
@@ -51,6 +51,7 @@
             transition:transform .2s;
             font-size:14px;
             background:none;
+            border-radius:50px;
         }
 
         .info-wrapper__return:active {
@@ -130,7 +131,7 @@
 <body>
     <div class="error-code">404</div>
     <div class="info-wrapper">
-        <p class="info-wrapper__text">Żądana strona nie istnieje pod tym linkim lub została usunięta</p>
+        <p class="info-wrapper__text">Żądana strona została usunięta lub przeniesiona pod inny adres </p>
         <button class="info-wrapper__return">Powrót</button>
     </div>
 </body>
