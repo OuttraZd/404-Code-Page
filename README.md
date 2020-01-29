@@ -1,11 +1,11 @@
-## 404 Error Code Page
-### Technology:
+## 404 Code Page
+
+### Technology used
 * HTML
 * CSS
 * BEM
-## Time
-```
-2020 January (Some hours)
-```
 
+#### Time 
+
+```January 2020 (some hours)```
 
