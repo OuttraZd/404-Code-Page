@@ -7,5 +7,5 @@
 
 #### Time 
 
-```January 2020 (some hours)```
+```January 2020 (some days)```
 
