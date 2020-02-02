@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>404</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
 
     <style>
 
+        :root {
+            --blue:#2699a8;
+            --purple:#4d37af;
+        }
+
         @font-face {
-            font-family:"error-code";
+            font-family:'error-code';
             src:url("fonts/modern.ttf");
         }
 
@@ -23,40 +28,117 @@
             justify-content:center;
             flex-direction:column;
             background-color:#fff;
-            font-family: 'Open Sans', sans-serif;
+            font-family:'Rubik', sans-serif;
         }
 
         .error-code {
             font-size:10em;
-            font-family:"error-code";
-            color:rgb(224, 222, 222);
+            font-family:'error-code';
+            background-clip:border-box;
+            background:-webkit-linear-gradient(var(--blue), var(--purple));
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
         }
 
         .info-wrapper {
             text-align:center;
             position:relative;
-            bottom:15px;
+            bottom:30px;
         }
 
         .info-wrapper__text {
-            font-size:17px;
+            font-size:15px;
             padding:0px 10px;
+            line-height:25px;
+        }
+
+        .info-wrapper__text--solution {
+            text-decoration:underline;
+            cursor:pointer;
         }
 
         .info-wrapper__return {
-            width:90px;
-            height:32px;
-            border:1px solid #000;
+            width:105px;
+            height:41px;
+            border:2px solid var(--purple);
             padding:8px;
             transition:transform .2s;
             font-size:14px;
             background:none;
             border-radius:50px;
+            cursor:pointer;
+            font-family:'Rubik', sans-serif;
+            outline:none;
         }
 
         .info-wrapper__return:active {
             transform:scale(.9);
+        }
 
+        .solution {
+            display:none;
+        }
+
+        .solution.active {
+            display:flex;
+            align-items: center;
+            justify-content:space-between;
+            flex-direction:column;
+            width:100%;
+            height:100%;
+            background-color:#fff;
+            position:absolute;
+        }
+
+        .solution__wrapper {
+            width:100%;
+            height:100%;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            flex-direction:column;
+        }
+
+        .solution__list {
+            margin-top:180px;
+        }
+
+        .solution__list-ul {
+            list-style-type:none;
+        }
+
+        .solution__list-ul-li {
+            line-height:30px;
+        }
+
+        .solution__footer {
+            bottom:0;
+            position:fixed;
+            width:100%;
+            height:120px;
+            background-color:#f1f1f1;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .solution__footer-button {
+        	width:105px;
+        	height:41px;
+        	border:2px solid var(--purple);
+       		padding:8px;
+        	transition:transform .2s;
+       		font-size:14px;
+        	background:none;
+        	border-radius:50px;
+        	cursor:pointer;
+        	font-family:'Rubik', sans-serif;
+        	color:#000;
+        	outline:none;
+        }
+
+        .solution__footer-button:active {
+        	transform:scale(.9);
         }
 
         @media (min-width:450px) {
@@ -65,7 +147,18 @@
             }
             .info-wrapper {
                 position:relative;
-                bottom:20px;
+                bottom:45px;
+            }
+            .info-wrapper__return {
+                width:120px;
+                height:40px;
+                font-size:16px;
+            }
+            .solution__list {
+                margin-top:200px;
+            }
+            .solution__list-ul-li {
+                line-height:40px;
             }
         }
 
@@ -76,17 +169,29 @@
             .info-wrapper {
                 bottom:60px;
             }
+            .info-wrapper__return {
+                width:115px;
+                height:42px;
+                font-size:16px;
+            }
         }
 
         @media (min-width:1000px) {
             .error-code {
                 font-size:26em;
             }
+            .info-wrapper__text {
+                font-size:17px;
+            }
             .info-wrapper__return {
                 width:120px;
-                height:40px;
+                height:50px;
                 font-size:16px;
                 margin-top:5px;
+            }
+            .solution__list {
+                margin-top:220px;
+                font-size:17px;
             }
         }
 
@@ -102,9 +207,13 @@
                 font-size:22px;
             }
             .info-wrapper__return {
-                width:150px;
-                height:45px;
+                width:180px;
+                height:65px;
                 font-size:20px;
+            }
+            .solution__list {
+                margin-top:310px;
+                font-size:18px;
             }
         }
 
@@ -119,9 +228,13 @@
                 font-size:26px;
             }
             .info-wrapper__return {
-                width:180px;
-                height:55px;
-                font-size:21px;
+                width:250px;
+                height:82px;
+                font-size:24px;
+            }
+            .solution__list {
+                margin-top:360px;
+                font-size:19px;
             }
         }
 
@@ -131,8 +244,33 @@
 <body>
     <div class="error-code">404</div>
     <div class="info-wrapper">
-        <p class="info-wrapper__text">Żądana strona została usunięta lub przeniesiona pod inny adres </p>
+        <p class="info-wrapper__text">Żądana strona została usunięta lub przeniesiona pod inny adres. Wypróbuj <span class="info-wrapper__text--solution">te rozwiązania</span> lub wróc do strony głownej.</p>
         <button class="info-wrapper__return">Powrót</button>
     </div>
+
+    <section class="solution">
+        <div class="solution__list">
+            <ul class="solution__list-ul">
+                <li class="solution__list-ul-li">Spróbuj odświeżyć stronę (F5, prawy przycisk myszy > odśwież)</li>
+                <li class="solution__list-ul-li">Wyczyść pamięć podręczną (cache) przeglądarki</li>
+                <li class="solution__list-ul-li">Upewnij się, że adres strony jest poprawnie napisany</li>
+            </ul>
+        </div>
+        <footer class="solution__footer">
+            <button class="solution__footer-button">Wstecz</button>
+        </footer>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('.info-wrapper__text, .solution__footer-button').click(function () {
+                $('.solution').toggleClass('active');
+            });
+        });
+
+    </script>
 </body>
 </html>
